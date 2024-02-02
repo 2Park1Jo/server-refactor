@@ -16,7 +16,7 @@ import java.util.List;
         "spring.datasource.url=jdbc:h2:mem:testdb",
         "spring.datasource.driver-class-name=org.h2.Driver",
         "spring.datasource.username=sa",
-        "spring.datasource.password=password",
+        "spring.datasource.password=",
         "spring.jpa.hibernate.ddl-auto=update" // 테이블 자동 생성 설정
 })
 class WorkspaceRepositoryTest {
@@ -34,7 +34,7 @@ class WorkspaceRepositoryTest {
         workspaceRepository.save(Workspace.builder()
                 .workspaceName("붕어빵 워크스페이스")
                 .goal("세상 모든 붕어빵을 위하여")
-                .deadline(LocalDate.of(2024, 3, 4))
+                .deadline(LocalDate.parse("2024-03-04"))
                 .build());
 
         List<Workspace> workspaceList = workspaceRepository.findAll();

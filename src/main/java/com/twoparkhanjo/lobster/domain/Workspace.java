@@ -10,7 +10,6 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 @ToString
 @Getter
@@ -28,6 +27,7 @@ public class Workspace {
     private String workspaceName;
     @Column(name = "goal")
     private String goal;
+    @DateTimeFormat(pattern = "yyyy-mm-dd")
     @Column(name = "deadline", columnDefinition = "date")
     private LocalDate deadline;
     @CreatedDate
