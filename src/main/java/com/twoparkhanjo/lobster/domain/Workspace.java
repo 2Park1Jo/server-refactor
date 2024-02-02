@@ -2,16 +2,23 @@ package com.twoparkhanjo.lobster.domain;
 
 import jakarta.persistence.*;
 import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import java.time.LocalDate;
 import java.util.Date;
 
-@Entity
-@Table(name = "workspace")
+@ToString
+@Getter
 @Builder
 @NoArgsConstructor
+@Table(name = "workspace")
+@Entity
+@EntityListeners(AuditingEntityListener.class)
 public class Workspace {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,15 +28,15 @@ public class Workspace {
     private String workspaceName;
     @Column(name = "goal")
     private String goal;
-    @Column(name = "deadline")
-    private String deadline;
+    @Column(name = "deadline", columnDefinition = "date")
+    private LocalDate deadline;
     @CreatedDate
     @DateTimeFormat(pattern = "yyyy-mm-dd")
     @Column(name = "created_at", columnDefinition = "date")
-    private Date createdAt;
+    private LocalDate createdAt;
 
     @Builder
-    public Workspace(Integer workspaceId, String workspaceName, String goal, String deadline, Date createdAt) {
+    public Workspace(int workspaceId, String workspaceName, String goal, LocalDate deadline, LocalDate createdAt) {
         this.workspaceId = workspaceId;
         this.workspaceName = workspaceName;
         this.goal = goal;
