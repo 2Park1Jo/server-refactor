@@ -1,6 +1,5 @@
 package com.twoparkhanjo.lobster.controller;
 
-import com.twoparkhanjo.lobster.domain.WorkspaceRepository;
 import com.twoparkhanjo.lobster.dto.WorkspaceSaveRequest;
 import com.twoparkhanjo.lobster.service.WorkspaceService;
 import lombok.RequiredArgsConstructor;

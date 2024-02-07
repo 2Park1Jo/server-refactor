@@ -32,8 +32,9 @@ class WorkspaceControllerTest {
         WorkspaceSaveRequest workspace = WorkspaceSaveRequest.builder()
                 .workspaceName("붕어빵 워크스페이스")
                 .goal("세상 모든 붕어빵을 위하여")
-                .deadline("2024-03-04")
+                .deadline("2024-7-6")
                 .build();
+
         String postUrl = URL + port + "/workspaces/create";
 
         ResponseEntity<HttpStatusCode> responseEntity = testRestTemplate.postForEntity(postUrl, workspace, HttpStatusCode.class);
