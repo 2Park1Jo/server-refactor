@@ -6,8 +6,9 @@ import com.twoparkhanjo.lobster.dto.WorkspaceSaveRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-@Service
+
 @RequiredArgsConstructor
+@Service
 public class WorkspaceService {
     private final WorkspaceRepository workspaceRepository;
 
