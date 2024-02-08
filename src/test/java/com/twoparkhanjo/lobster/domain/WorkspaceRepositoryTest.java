@@ -1,5 +1,7 @@
 package com.twoparkhanjo.lobster.domain;
 
+import com.twoparkhanjo.lobster.domain.workspace.Workspace;
+import com.twoparkhanjo.lobster.domain.workspace.WorkspaceRepository;
 import org.aspectj.lang.annotation.After;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;

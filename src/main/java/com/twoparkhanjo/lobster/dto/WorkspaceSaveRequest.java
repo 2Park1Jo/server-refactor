@@ -1,13 +1,11 @@
 package com.twoparkhanjo.lobster.dto;
 
-import com.twoparkhanjo.lobster.domain.Workspace;
+import com.twoparkhanjo.lobster.domain.workspace.Workspace;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.springframework.format.annotation.DateTimeFormat;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -15,8 +13,11 @@ import java.time.format.DateTimeFormatter;
 @Builder
 @NoArgsConstructor
 public class WorkspaceSaveRequest {
+    @Schema(example = "워크스페이스명")
     private String workspaceName;
+    @Schema(example = "목표")
     private String goal;
+    @Schema(example = "2024-01-01")
     private String deadline;
 
     @Builder

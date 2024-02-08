@@ -1,5 +1,6 @@
-package com.twoparkhanjo.lobster.domain;
+package com.twoparkhanjo.lobster.domain.workspace;
 
+import com.twoparkhanjo.lobster.domain.workspace.Workspace;
 import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
