@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RequiredArgsConstructor
 @RequestMapping("/workspaces")
-@RestController()
+@RestController
 public class WorkspaceController {
     private final WorkspaceService workspaceService;
 
