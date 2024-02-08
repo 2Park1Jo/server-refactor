@@ -1,6 +1,6 @@
 package com.twoparkhanjo.lobster.dto;
 
-import com.twoparkhanjo.lobster.domain.member.Member;
+import com.twoparkhanjo.lobster.domain.user.User;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Builder;
 import lombok.Getter;
@@ -9,26 +9,26 @@ import lombok.NoArgsConstructor;
 @Getter
 @Builder
 @NoArgsConstructor
-public class MemberSaveRequest {
-    @Schema(example = "member id")
+public class UserSaveRequest {
+    @Schema(example = "user id")
     private String email;
     @Schema(example = "password")
     private String password;
-    @Schema(example = "member name")
-    private String memberName;
+    @Schema(example = "user name")
+    private String userName;
 
     @Builder
-    public MemberSaveRequest(String email, String password, String memberName) {
+    public UserSaveRequest(String email, String password, String userName) {
         this.email = email;
         this.password = password;
-        this.memberName = memberName;
+        this.userName = userName;
     }
 
-    public Member toEntity() {
-        return Member.builder()
+    public User toEntity() {
+        return User.builder()
                 .email(email)
                 .password(password)
-                .memberName(memberName)
+                .userName(userName)
                 .build();
     }
 }
