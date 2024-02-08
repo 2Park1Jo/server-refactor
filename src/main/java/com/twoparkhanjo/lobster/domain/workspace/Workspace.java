@@ -11,7 +11,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 
-@ToString
 @Getter
 @Builder
 @NoArgsConstructor
