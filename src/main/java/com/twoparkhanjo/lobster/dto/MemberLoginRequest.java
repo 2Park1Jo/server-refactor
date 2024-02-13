@@ -8,14 +8,14 @@ import lombok.NoArgsConstructor;
 @Getter
 @Builder
 @NoArgsConstructor
-public class UserLoginRequest {
-    @Schema(example = "user id")
+public class MemberLoginRequest {
+    @Schema(example = "member id")
     private String email;
     @Schema(example = "password")
     private String password;
 
     @Builder
-    public UserLoginRequest(String email, String password) {
+    public MemberLoginRequest(String email, String password) {
         this.email = email;
         this.password = password;
     }
