@@ -17,11 +17,6 @@ public class MemberService {
     }
 
     public Member findMember(MemberLoginRequest memberLoginRequest) throws IllegalArgumentException {
-        Member member = memberRepository.findByEmailAndPassword(memberLoginRequest.getEmail(), memberLoginRequest.getPassword());
-
-        if (member == null) {
-            throw new IllegalArgumentException();
-        }
-        return member;
+        return memberRepository.findByEmailAndPassword(memberLoginRequest.getEmail(), memberLoginRequest.getPassword());
     }
 }
