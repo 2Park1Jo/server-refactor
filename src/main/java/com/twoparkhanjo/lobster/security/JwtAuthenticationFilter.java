@@ -29,6 +29,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
             if (token != null && !token.equalsIgnoreCase("null")) {
                 String email = jwtTokenProvider.validate(token);
+
                 AbstractAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(
                         email, null, AuthorityUtils.NO_AUTHORITIES
                 );

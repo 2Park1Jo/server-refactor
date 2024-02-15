@@ -2,12 +2,14 @@ package com.twoparkhanjo.lobster.controller;
 
 import com.twoparkhanjo.lobster.dto.WorkspaceSaveRequest;
 import com.twoparkhanjo.lobster.service.WorkspaceService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+@Tag(name = "워크스페이스")
 @RequiredArgsConstructor
 @RequestMapping("/workspaces")
 @RestController

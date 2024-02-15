@@ -13,7 +13,7 @@ import java.util.Date;
 
 @Service
 public class JwtTokenProvider {
-    private static final String SECRET_KEY = "secretkey";
+    private static final String SECRET_KEY = System.getenv("jasypt.encryptor.password");
 
     public String createToken(Member member) {
         Date expireDate = Date.from(Instant.now().plus(1, ChronoUnit.DAYS)); //토큰 유효 기간 1일
