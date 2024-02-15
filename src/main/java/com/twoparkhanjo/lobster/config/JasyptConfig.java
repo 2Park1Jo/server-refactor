@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class JasyptConfig {
-    private String password = System.getenv("jasypt.encryptor.password");
+    private String password = System.getenv("JASYPT_PASSWORD");
     private final String ALGORITHM = "PBEWITHHMACSHA512ANDAES_256";
 
     @Bean(name = "jasyptStringEncryptor")
