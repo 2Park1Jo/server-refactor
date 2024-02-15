@@ -22,13 +22,17 @@ public class Workspace {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "workspace_id", columnDefinition = "int")
     private int workspaceId;
+
     @Column(name = "workspace_name")
     private String workspaceName;
+
     @Column(name = "goal")
     private String goal;
+
     @DateTimeFormat(pattern = "yyyy-mm-dd")
     @Column(name = "deadline", columnDefinition = "date")
     private LocalDate deadline;
+
     @CreatedDate
     @DateTimeFormat(pattern = "yyyy-mm-dd")
     @Column(name = "created_at", columnDefinition = "date")

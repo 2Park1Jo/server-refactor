@@ -7,20 +7,20 @@ import lombok.NoArgsConstructor;
 @Entity
 @NoArgsConstructor
 @Builder
-public class WorkspaceUser {
+public class WorkspaceMember {
     @Id
-    @Column(name = "user_id")
-    private String userId;
+    @Column(name = "member_id")
+    private String memberId;
     @ManyToOne(targetEntity = Workspace.class, fetch = FetchType.LAZY)
     @JoinColumn(name = "workspace_id", columnDefinition = "int", referencedColumnName = "workspace_id")
     private int workspaceId;
-    @Column(name = "user_name")
-    private String userName;
+    @Column(name = "member_name")
+    private String memberName;
 
     @Builder
-    public WorkspaceUser(String userId, int workspaceId, String userName) {
-        this.userId = userId;
+    public WorkspaceMember(String memberId, int workspaceId, String memberName) {
+        this.memberId = memberId;
         this.workspaceId = workspaceId;
-        this.userName = userName;
+        this.memberName = memberName;
     }
 }

@@ -16,10 +16,13 @@ public class Member {
     @Id
     @Column(name = "member_id")
     private String email;
+
     @Column(name = "password")
     private String password;
+
     @Column(name = "member_name")
     private String memberName;
+
     @JoinColumn(name = "last_accessed_workspace_id", columnDefinition = "int", referencedColumnName = "workspace_id")
     private int lastAccessedWorkspaceId;
 
