@@ -9,20 +9,25 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @Tag(name = "회원")
 @RequiredArgsConstructor
-@RequestMapping("/members")
+@RequestMapping("/member")
 @RestController
 public class MemberController {
     private final MemberService memberService;
     private final JwtTokenProvider jwtTokenProvider;
 
-    @PostMapping("/register")
+    @PostMapping("/duplicateid")
+    public ResponseEntity<?> validateMemberId(@RequestParam("email") String memberId) {
+        if (!memberService.isDuplicatedId(memberId)) {
+            return new ResponseEntity<>(HttpStatus.OK);
+        }
+        return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+    }
+
+    @PostMapping("/signup")
     public void register(@RequestBody MemberSaveRequest memberSaveRequest) {
         memberService.save(memberSaveRequest);
     }
@@ -42,4 +47,5 @@ public class MemberController {
 
         return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
+
 }

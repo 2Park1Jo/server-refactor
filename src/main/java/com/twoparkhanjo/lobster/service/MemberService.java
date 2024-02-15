@@ -19,4 +19,8 @@ public class MemberService {
     public Member findMember(MemberLoginRequest memberLoginRequest) throws IllegalArgumentException {
         return memberRepository.findByEmailAndPassword(memberLoginRequest.getEmail(), memberLoginRequest.getPassword());
     }
+
+    public boolean isDuplicatedId(String memberId) {
+        return memberRepository.existsById(memberId);
+    }
 }
